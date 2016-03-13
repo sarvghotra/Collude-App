@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/change_Candidate"
+        android:actionProviderClass="com.myscript.atk.itc.sample.controller.ChangeCandidateActionProvider"
+        android:showAsAction="always"
+        android:title="@string/change_candidate"/>
+    <item
+        android:id="@+id/typeset"
+        android:showAsAction="always"
+        android:title="@string/typeset"/>
+
+</menu>

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head><link rel="icon" href="../images/favicon.ico" />
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+<title>MyScript GEW (Android)</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+<link rel="stylesheet" href="../css/MySBuilder.css" type="text/css">
+
+<script src="../js/prism.js"></script>
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+
+<h1>Geometry Widget</h1>
+<p class="remark">To install and integrate the <strong>Geometry Widget </strong>on Android,  you must be using the latest version of Eclipse and have all Android tools and SDK installed and configured properly.</p>
+<ul><h2>Integration</h2></ul>
+ <ul>
+   <h3>Links between projects</h3>
+<p><ins>geometry-widget-lib-styleable</ins><br />
+Right-click &gt; Properties &gt; Android<br>
+> Add reference: geometry-widget-lib</p>
+<p><ins>main_application</ins><br />
+  Right-click > Properties > Android<br />
+  > Add references: geometry-widget-lib-styleable + myscript-certificate</p>
+ </ul>
+
+<ul>
+  <h3>Handwriting recognition resources</h3>
+  <p>Copy assets directory from geometry-widget-sample into the root level of main_application directory.<br />
+    It adds the following mandatory file:<br />
+  <ul>
+    <ul>
+      <li>sketch/shk-standard.res</li>
+    </ul>
+  </ul>
+</ul>
+
+<ul>
+  <h3>Libraries</h3>
+<p>The following SDK libraries are required and need to be added:</p>
+<ul><ul>
+<li>libMyScript2D.so</li>
+<li>libMyScriptDocument.so</li>
+<li>libMyScriptEngine.so</li>
+<li>libMyScriptInk.so</li>
+<li>libMyScriptMath.so</li>
+<li>libMyScriptShape.so</li>
+<li>libMyScriptText.so</li>
+</ul></ul>
+
+  <h3>XML layout</h3>
+  <p>Add a layout resource in res/layout from your application containing the following definition, in order to provide the UI for the widget.</p>
+  <pre class="language-java"><code>&lt;com.myscript.atk.gew.styleable.GeometryWidgetStyleable
+  android:id="@+id/vo_geometry_widget" 
+  android:layout_width="fill_parent" 
+  android:layout_height="fill_parent" /&gt;</code></pre>
+  <p>The definition can also be used to change the default options in the widget. See the <strong>geometry-widget-lib-styleable/res/values/vo_geometry_attrs.xml</strong> to get the list of the widget's attributes.</p>
+</ul>
+<ul>
+  <h3>Integration</h3>
+  <ul>
+    <ul>
+      <li>Add <strong>SimpleResourceHelper.java</strong> from the sample program to your project.<br />
+        This class is used to copy the resources from the assets to the system when running the application.</li>
+      <li>Create an Activity class.<br>
+        This class should import the certificate <strong>com.myscript.certificate.MyCertificate</strong> and the <strong>SimpleResourceHelper</strong>.    The activity can implement the different GeometryWidgetApi listeners.    (See the code sample provided for more details).</li>
+      <li>Add the following code to the <strong>onCreate</strong> method of the Activity class.
+    </ul>
+  </ul>
+  <pre class="language-java"><code>GeometryWidgetApi mWidget = (GeometryWidgetApi) findViewById(R.id.vo_geometry_widget);
+
+// vo_geometry_widget is defined in layout hierarchy
+
+// Setup math resource    
+final String[] resources = new String[]
+{
+  "shk-standard.res"
+};      
+
+// Prepare resources = copy them from the assets to the device
+final String subfolder = "sketch";
+String resourcePath = new String(getFilesDir().getPath() + java.io.File.separator + subfolder);
+SimpleResourceHelper.copyResourcesFromAssets(getAssets(), subfolder, resourcePath, resources);
+
+// Configure geometry widget
+mWidget.setResourcesPath(resourcePath);
+mWidget.configure(this, resources, MyCertificate.getBytes());</code></pre>
+  <h3>Integration as Android fragment</h3>
+  <p>In case of fragment integration, the initialization should  be performed in the <strong>onCreateView</strong> method:</p>
+  <pre class="language-java"><code>View rootView = inflater.inflate(R.layout.fragment_geometry_widget, container, false);
+
+mWidget = (GeometryWidgetApi) rootView.findViewById(R.id.vo_geometry_widget);
+
+// Setup math resource
+final String[] resources = new String[]
+{
+  "shk-standard.res"
+};
+
+// Prepare resources = copy them from the assets to the device
+final String subfolder = "sketch";
+String resourcePath = new String(getFilesDir().getPath() + java.io.File.separator + subfolder);
+SimpleResourceHelper.copyResourcesFromAssets(getAssets(), subfolder, resourcePath, resources);
+
+// Configure geometry widget
+mWidget.setResourcesPath(resourcePath);
+mWidget.configure(this, resources, MyCertificate.getBytes());
+return (rootView);</code></pre>
+  <p class="remark">This example demonstrates the minimum steps needed to initialize the Geometry Widget. You can change its look and feel by calling its setup APIs and by overriding the listener callbacks that it manages.</p>
+  </article>
+</ul>
+	</body>
+</html>

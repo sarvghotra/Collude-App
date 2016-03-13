@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head><link rel="icon" href="../images/favicon.ico" />
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>MyScript SCW (Android)</title>
+<link rel="stylesheet" href="../css/MySBuilder.css" type="text/css">
+
+<script src="../js/prism.js"></script>
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+
+      <h1>Single Character Widget      </h1>
+      <p class="remark">To install and integrate the <strong>Single Character Widget</strong> on Android, you must be using  the latest version of Eclipse and have all Android tools and SDK (level 10 or up) installed and configured properly.</p>
+    <h2>Integration</h2>
+      <h3>Links between projects</h3>
+        <ul>
+          <p><ins>main_application</ins><br />
+            Right-click > Properties > Android<br />
+            > Add references: scw-lib</p>
+        </ul>
+        <h3>Handwriting recognition resources</h3>
+        <p>Copy assets directory from scw-sample into the root level of main_application directory.<br>
+          Resources should include at least an AK type resource. More LK resources can be added as well, to improve and/or specialize the handwriting recognition.</p>
+        <p>For example, in US English, resources should be at least:<br>
+  <ul> <ul>
+          <li>en_US-ak-iso.lite.res<em> (for isolated mode)</em></li>
+          <li>latin-ak-superimposed.lite.res <em>(for superimposed mode)</em></li>
+          <li>en_US-lk-text.lite.res</li>
+          <li>mul-lk-gesture.res</li>
+        </ul></ul>
+        <ul>
+          <h3>Libraries</h3>
+          <p>The following SDK libraries are required and need to be added:</p>
+          <ul>
+            <li>libMyScript2D.so</li>
+            <li>libMyScriptEngine.so</li>
+            <li>libMyScriptPrediction.so</li>
+            <li>libMyScriptText.so</li>
+            <li>com.myscript.engine.jar</li>
+            <li>              com.myscript.text.jar</li>
+            <li>              com.myscript.prediction.jar</li>
+          </ul>
+        </ul>
+        <h3>XML layout</h3>
+        <p>Add a layout resource in res/layout from your application containing the following definition, in order to provide the UI for the widget.</p>
+<pre class="language-java"><code>&lt;com.myscript.atk.scw.SCW
+  android:id="@+id/widget"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" /&gt;</code></pre>
+        <h3>Simple code integration</h3>
+        <ul>
+          <li>Add<strong> SimpleResourceHelper.java</strong> from the sample program to your project.<br />
+            This class is used to copy the resources from the assets to the system when running the application.</li>
+          <li>Create an Activity class. This class should import the certificate <strong>com.myscript.certificate.MyCertificate</strong> and the <strong>SimpleResourceHelper</strong>.<br />
+          The activity can implement the different SingleCharWidgetApi listeners. (See the code sample provided for more details).</li>
+          <li>Add the following code to the <strong>onCreate</strong> method of the Activity class.<br />
+    </ul>
+<pre class="language-java"><code>SingleCharWidgetApi mWidget = (SingleCharWidgetApi) findViewById(R.id.widget);
+
+// widget is defined in layout hierarchy
+
+// Build an array of handwriting resources
+final String[] resources = new String[] {
+ "latin/latin-ak-superimposed.lite.res",
+ "en_US/en_US-lk-text.lite.res",
+ "mul/mul-lk-gesture.res"
+};
+
+// Copy handwriting resources from assets if missing and get their paths
+SimpleResourceHelper helper = new SimpleResourceHelper(this);
+String[] paths = helper.getResourcePaths(resources);
+
+// Initialize the widget
+mWidget.configure("en_US", paths, MyCertificate.getBytes());
+</code></pre>
+        <p class="remark">This example demonstrates the minimum steps needed to initialize the Single Character Widget. You can change its look and feel by calling its setup APIs and by overriding the listener callbacks that it manages.</p>
+  </body>
+</html>

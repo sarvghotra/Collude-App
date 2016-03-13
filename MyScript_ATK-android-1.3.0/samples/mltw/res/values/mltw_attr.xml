@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="HoloBagelWidget">
+        <attr name="mltw_widgetBackground" format="color|reference" />
+        <attr name="mltw_widgetInkColor" format="color|reference" />
+        <attr name="mltw_widgetInkColorSelected" format="color|reference" />
+        <attr name="mltw_widgetInkThickness" format="dimension|reference" />
+        <attr name="mltw_widgetScrollbar" format="reference" />
+        <attr name="mltw_widgetScrollbarBackground" format="color|reference" />
+        <attr name="mltw_candidatesBackground" format="color|reference" />
+        <attr name="mltw_candidatesColor" format="color|reference" />
+        <attr name="mltw_candidatesColorSelected" format="color|reference" />
+        <attr name="mltw_noteTextBackground" format="color|reference" />
+        <attr name="mltw_noteTextColor" format="color|reference" />
+    </declare-styleable>
+
+</resources>

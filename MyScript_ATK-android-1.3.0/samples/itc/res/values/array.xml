@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="gesture_source_dlg_items">
+        <item>@string/insert_gesture</item>
+        <item>@string/join_gesture</item>
+        <item>@string/erase_gesture</item>
+        <item>@string/overwrite_gesture</item>
+        <item>@string/singletap_gesture</item>
+        <item>@string/selection_gesture</item>
+        <item>@string/underline_gesture</item>
+        <item>@string/return_gesture</item>
+    </array>
+    <array name="gesture_settings_source_dlg_items">
+        <item>@string/enable_gesture</item>
+        <item>@string/default_processing</item>
+    </array>
+    <array name="pen_dlg_items">
+        <item>@string/recognition_pen</item>
+        <item>@string/drawing_pen</item>
+    </array>
+        <array name="page_interpreter_dlg_items">
+        <item>@string/page_interpreter_1</item>
+        <item>@string/page_interpreter_2</item>
+        <item>@string/page_interpreter_3</item>
+        <item>@string/page_interpreter_4</item>
+    </array>
+
+</resources>

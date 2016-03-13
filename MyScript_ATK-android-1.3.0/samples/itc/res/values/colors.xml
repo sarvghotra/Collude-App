@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ITC_TRANSPARENT">#0000</color>
+    <color name="ITC_APP_BACKGROUND_COLOR">#FFFFFF</color>
+    <color name="ITC_GUIDELINE_COLOR">#BFC2C6</color>
+    <color name="ITC_RECOGNIZED_INK_COLOR">#5F6FA6</color>
+    <color name="ITC_DRAWING_INK_COLOR">#D3D3D3</color>
+    <color name="ITC_TO_BE_RECOGNIZED_INK_COLOR">#000000</color>
+    <color name="ITC_UNDERLINE_COLOR">#5FBFDF</color>
+    <color name="ITC_SELECTION_BACKGROUND_COLOR">#5F7FF2</color>
+    <color name="ITC_TINT_COLOR">#5FBFDF</color>
+    <color name="ITC_TOOLBAR_TINT_COLOR">#5F6F7F</color>
+    <color name="ITC_TOOLBAR_TEXT_COLOR">#FFFFFF</color>
+    <color name="ITC_RECOGNITION_TEXT_COLOR">#EEF0F0</color>
+    <color name="ITC_DEBUG_COLOR_RED">#FF0000</color>
+    <color name="ITC_DEBUG_COLOR_GREEN">#00FF00</color>
+    <color name="ITC_DEBUG_COLOR_YELLOW">#FFFF00</color>
+</resources>

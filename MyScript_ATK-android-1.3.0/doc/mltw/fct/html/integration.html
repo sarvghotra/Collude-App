@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head><link rel="icon" href="../images/favicon.ico" />
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>MyScript MLTW (Android)</title>
+    <link rel="stylesheet" href="../css/MySBuilder.css" type="text/css">
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+<h1>Multi Line Text Widget</h1>
+<p class="remark">To install and integrate the <strong>Multi Line Text Widget</strong> on Android, you must be using  the latest version of Eclipse and have all Android tools and SDK (level 11 or up) installed and configured properly.</p>
+<ul>
+  <h2>Integration</h2>
+<h3>Links between projects</h3>
+<p><ins>main_application</ins><br />
+  Right-click > Properties > Android<br />
+  > Add references: mltw-lib-styleable + myscript-certificate</p>
+
+  <h3>Handwriting recognition resources</h3>
+  <p>Copy  assets directory from mltw-sample into the root level of  main_application directory.<br>
+Resources  should include at least an AK type resource. More LK resources can be added as  well, to improve and/or specialize handwriting recognition.</p>  
+  <p>For example, in US English, resources should be at least:<br>
+  <ul>
+  <li>en_US-ak-cur.lite.res</li>
+  <li>en_US-lk-text.lite.res</li>
+  </ul>
+  
+<h3>Libraries</h3>
+<p>The following SDK libraries are required and need to be added:</p>
+<ul>
+  <li>libMyScript2D.so</li>
+  <li>libMyScriptEngine.so</li>
+  <li>libMyScriptText.so</li>
+</ul>
+<h3>XML layout</h3>
+  <p>Add a layout resource in res/layout from your application containing the following definition, in order to provide the UI for the widget.</p>
+
+<pre>&lt;com.myscript.atk.mltw.MultiLineTextWidgetStyleable
+        android:id="@+id/mltw"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/&gt;</pre>
+
+<p>The definition can also be used to change the default options in the widget. See the <i>mltw-lib-styleable/res/values/ms_mltw_attrs.xml</i> to get the list of the widget's attributes.</p>
+
+<h3>Simple code integration</h3>
+<ul>
+  <li>Add <i>SimpleResourceHelper.java</i> from the sample program to your project.<br /> This class is used to copy the resources from the assets to the system when running the application.</li>
+  <li>Create an Activity class. This class should import the certificate <i>com.myscript.certificate.MyCertificate</i> and the <i>SimpleResourceHelper</i>.<br />The activity can implement the different MultiLineTextWidgetApi listeners. (See the code sample provided for more details).</li>
+  <li>Add the following code to the created Activity class.<br />
+</ul>
+
+<pre>
+// load the StylusCore library when this class is loaded
+static {
+  // you can either load the library by name
+  // Android will search the default paths for a dynamic library with file name libStylusCore.so
+
+  System.loadLibrary("StylusCore");
+
+  // or you can load the library by specifying a full path
+  // this is useful when you want to load a specific version of the StylusCore library from the filesystem
+
+  // System.load("/data/data/com.myscript.atk.mltw.demos/lib/libStylusCore.so");
+}
+	
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+
+  MultiLineTextWidgetApi mWidget = (MultiLineTextWidgetApi) findViewById(R.id.multi_line_text_widget);
+
+  // Build an array of handwriting resources
+  final String[] resources = new String[] {
+    "en_US/en_US-ak-cur.lite.res",
+    "en_US/en_US-lk-text.lite.res"
+  };
+ 
+  // Copy handwriting resources from assets if missing and get their paths
+  SimpleResourceHelper helper = new SimpleResourceHelper(this);
+  String[] paths = helper.getResourcePaths(resources);
+
+  // Define a custom lexicon
+  String[] lexicon = new String[] {
+    // add your user dictionary here
+  };
+
+  // Initialize the widget
+  mWidget.configure("en_US", paths, lexicon, MyCertificate.getBytes());
+}
+</pre>
+
+<p class="remark">This example demonstrates the minimum steps needed to initialize the Multi Line Text Widget. You can change its look and feel by calling its setup APIs and by overriding the listener callbacks that it manages.</p>
+   <h3>Text interface</h3>
+   <p>Handwriting recognition candidate change is implemented via a Word object and a word-based method:</p>
+   <ul>
+     <ul>
+       <p> public void replaceWord(Word word, String text)<br>
+         word - Word to replace<br>
+         text - Replacement text string (should be a candidate of the given word)</p>
+     </ul>
+   </ul>
+   <p>The Word object is intended to regroup informations about a recognized word in the widget. It contains: </p>
+   <ul>
+     <ul>
+       <p> getText() - The word current label<br>
+         getCandidates() - The word alternative recognition candidates<br>
+         getStart() - Start index of the word in the text<br>
+         getEnd() - End index of the word in the text</p>
+     </ul>
+   </ul>
+   <h3>Handwriting recognition setup</h3>
+   <p>The widget simplifies the setup of the handwriting recognition engine, and reconfiguration of the engine in case of language change for example.</p>
+   <ul>
+     <ul>
+       <p> public void configure(String locale, String[] resources, String[] lexicon, byte[] certificate)<br>
+         locale   - String representation of the handwriting recognition locale.<br>
+         resources  - Array of paths to handwriting resource files.<br>
+         lexicon   - Array of user lexicon entries. May be null.<br>
+         certificate - Byte array containing the handwriting recognition certificate.
+     </ul>
+   </ul>
+   <p>This function is non-blocking and performs configuration in the background to avoid blocking the UI thread. Listener callbacks are provided to monitor the beginning and end of the configuration process and update the UI of the input method accordingly.</p>
+   <p>&nbsp; </p>
+</ul>
+  </body>
+</html>

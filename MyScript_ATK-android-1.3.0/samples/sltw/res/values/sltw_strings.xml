@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sltw_sample_app_name">TextWidget Sample</string>
+    <string name="sltw_sample_activity_name">TextWidget Sample</string>
+    
+    <string name="sltw_sample_defaultText"></string>
+
+    <string name="sltw_sample_configSuccess">Configuration succeeded</string>
+    <string name="sltw_sample_configFailed">Configuration failed</string>
+
+    <string name="sltw_sample_insertGestureFailure">Cannot do insert gesture at index %d</string>
+    <string name="sltw_sample_returnGestureToast">Return gesture at index %d</string>
+    <string name="sltw_sample_pinchGestureToast">Pinch gesture detected</string>
+
+    <string name="sltw_sample_languageButtonTextOff">Cur</string>
+    <string name="sltw_sample_languageButtonTextOn">Box</string>
+</resources>

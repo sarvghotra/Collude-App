@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyScript Geometry Widget sample</string>
+    <string name="activity_name">MyScript Geometry Widget sample</string>
+    
+    <!-- Language pack -->
+    <string name="language_pack_update_msg">Please wait for the first initialization</string>
+    <string name="langpack_loading_error_title">Initialization error</string>
+    <string name="langpack_loading_error_msg">Initialization</string>
+    
+    <!-- Menu -->
+    <string name="menu_undo">Undo</string>
+    <string name="menu_redo">Redo</string>
+    <string name="menu_erase">Clear</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_settings">Settings</string>
+    
+    <!-- Preferences -->
+    <string name="settings_activity_name">MyScript Geometry Widget sample settings</string>
+    <string name="settings_current_color">Current</string>
+    
+    <!-- Read/Write properties -->
+    <string name="pref_readwrite_category">Read/Write properties</string>
+    <string name="pref_ink_color_title">Ink color</string>
+    <string name="pref_ink_thickness_title">Ink thickness</string>
+    <string name="pref_dashed_title">Ink dashed</string>
+    <string name="pref_background_color_title">Background color</string>
+    <string name="pref_background_view_title">Background view</string>
+    <string name="pref_palm_title">Palm rejection</string>
+    <string name="pref_palm_summary">Enable/disable palm rejection</string>
+    <string name="pref_palm_lefthanded_title">Palm rejection: Left handed</string>
+    <string name="pref_palm_lefthanded_summary">Configure palm rejection for left handed</string>    
+    
+    <!-- Read only properties -->
+    <string name="pref_readonly_category">Read only properties</string>
+    <string name="pref_can_undo_title">Can undo</string>
+    <string name="pref_can_redo_title">Can redo</string>
+    <string name="pref_empty_title">Is empty</string>
+    <string name="pref_busy_title">Is busy</string>
+    
+    <!-- Constraints detection and display -->
+    <string name="pref_constraintsdetection_category">Constraints detection/display</string>
+    <string name="pref_constraint_detection_implicit_title">Implicit constraints detection</string>
+    <string name="pref_constraint_detection_explicit_title">Explicit constraints detection</string>
+    <string name="pref_constraint_display_implicit_title">Implicit constraints display</string>
+    <string name="pref_constraint_display_explicit_title">Explicit constraints display</string>
+    
+    <!-- Parameters -->
+    <string name="pref_parameters_category">Parameters</string>
+    <string name="pref_parameters_display_title">Display parameters</string>
+    
+    <!-- Brushes -->
+    <string name="pref_brushes_category">Brushes</string>
+    <string name="pref_parameters_brushes_title">Brushes parameters</string>
+    
+    <!-- Version -->
+    <string name="pref_version_category">Version</string>
+    <string name="pref_version_title">Build number</string>
+    <string name="pref_version_summary">1.0.0.?</string>
+    
+   <!-- Sharing -->
+    <string name="share_text">I am using %1$s for %2$s. Try it out, it\'s amazing!</string>
+    <string name="share_platform">Android</string>
+    <string name="share_error">An error occurred when sharing.</string>
+    <string name="share_no_external_storage_mounted">No external storage available.</string>
+    
+</resources>

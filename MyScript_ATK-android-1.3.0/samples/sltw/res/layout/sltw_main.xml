@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <!-- target field -->
+    <com.myscript.atk.sltw.sample.view.CustomEditText
+        android:id="@+id/textField"
+        android:text="@string/sltw_sample_defaultText"
+        android:textIsSelectable="true"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:gravity="top"
+        android:layout_alignParentTop="true"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" />
+
+    <!-- simple toolbar -->
+    <include layout="@layout/sltw_tool_bar"
+        android:id="@+id/sltw_toolbar"
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/sltw_sample_toolbarHeight" />
+    
+    <!-- text widget -->
+    <com.myscript.atk.sltw.SingleLineTextWidgetStyleable
+        android:id="@+id/sltw_text_widget"
+        android:layout_above="@id/sltw_toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/sltw_sample_widgetHeight" />
+    
+    <!-- simple candidate bar -->
+    <include layout="@layout/sltw_candidate_bar"
+        android:id="@+id/sltw_candidatebar"
+        android:layout_above="@id/sltw_text_widget"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/sltw_sample_candidatebarHeight" />
+
+</RelativeLayout>

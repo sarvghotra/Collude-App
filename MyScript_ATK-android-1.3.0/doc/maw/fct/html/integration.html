@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+  <head><link rel="icon" href="../images/favicon.ico" />
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+    <title>MyScript MAW (Android)</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+<link rel="stylesheet" href="../css/MySBuilder.css" type="text/css">
+
+<script src="../js/prism.js"></script>
+		<style type="text/css">
+		a.wiki-anchor {display: none; margin-left: 6px; text-decoration: none; }
+        </style>
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+<h1>Math Widget</h1>
+<p class="remark">To install and integrate the <strong>Math Widget</strong> on Android, you must be using  the latest version of Eclipse and have all Android tools and SDK (level 8 or up) installed and configured properly.</p>
+      <h2>Integration</h2>
+<h3>Links between projects</h3>
+<ul>
+<p><ins>main_application</ins><br />
+  Right-click > Properties > Android<br />
+  > Add references: maw-lib-styleable</p>
+</ul>
+
+  <h3>Handwriting recognition resources</h3>
+
+<p>Copy assets directory from maw-sample into the root level of main_application directory.<br />
+It adds the following mandatory resources and font:<br />
+<ul><ul>
+  <li>math-ak.res</li>
+  <li>math-grm-maw.res </li>
+  <li>STIXGeneral.ttf</li>
+</ul></ul>
+  
+  <ul>
+    <h3>Libraries</h3>
+    <p>The following SDK libraries are required and need to be added:</p>
+    <ul>
+      <li>libMyScript2D.so</li>
+      <li>libMyScriptMath.so</li>
+      <li>libMyScriptEngine.so</li>
+    </ul>
+  </ul>
+  <h3>XML layout</h3>
+  <p>Add a layout resource in res/layout from your application containing the following definition, in order to provide the UI for the widget.</p>
+
+<pre class="language-java"><code>&lt;com.myscript.atk.maw.styleable.MAWStyleable
+  android:id="@+id/myscript_maw" 
+  android:layout_width="fill_parent" 
+  android:layout_height="fill_parent" /&gt;</code></pre>
+
+<p>The definition can also be used to change the default options in the widget. See the <strong>maw-lib-styleable/res/values/myscript_maw_attrs.xml</strong> to get the list of the widget's attributes.</p>
+<h3>Integration</h3>
+<ul><ul>
+  <li>Add <strong>SimpleResourceHelper.java</strong> from the sample program to your project.<br />
+    This class is used to copy the resources from the assets to the system when running the application.</li>
+  <li>Create an Activity class.<br>
+    This class should import the certificate <strong>com.myscript.certificate.MyCertificate</strong> and the <strong>SimpleResourceHelper</strong>.    The activity can implement the different MathWidgetApi listeners.    (See the code sample provided for more details).</li>
+  <li>Add the following code to the <strong>onCreate</strong> method of the Activity class.
+</ul></ul>
+  <pre class="language-java"><code>MathWidgetApi mWidget = (MathWidgetApi) findViewById(R.id.myscript_maw);
+
+// myscript_maw is defined in layout hierarchy
+
+// Setup equation resource    
+final String[] resources = new String[]
+{
+  "math-ak.res",
+  "math-grm-maw.res" 
+};      
+
+// Prepare resources = copy them from the assets to the device
+final String subfolder = "math";
+String resourcePath = new String(getFilesDir().getPath() + java.io.File.separator + subfolder);
+SimpleResourceHelper.copyResourcesFromAssets(getAssets(), subfolder, resourcePath, resources);
+
+// Configure the Math Widget
+mWidget.setResourcesPath(resourcePath);
+mWidget.configure(this, resources, MyCertificate.getBytes());</code></pre>
+    <h3>Integration as Android fragment</h3>
+<p>In case of fragment integration, the initialization should  be performed in the <strong>onCreateView</strong> method:</p>
+<pre class="language-java"><code>View rootView = inflater.inflate(R.layout.fragment_maw, container, false);
+
+mWidget = (MathWidgetApi) rootView.findViewById(R.id.myscript_maw);
+
+// Setup equation resource
+final String[] resources = new String[]
+{
+  "math-ak.res",
+  "math-grm-maw.res" 
+};
+
+// Prepare resources = copy them from the assets to the device
+final String subfolder = "math";
+String resourcePath = new String(getFilesDir().getPath() + java.io.File.separator + subfolder);
+SimpleResourceHelper.copyResourcesFromAssets(getAssets(), subfolder, resourcePath, resources);
+
+// Configure the Math Widget
+mWidget.setResourcesPath(resourcePath);
+mWidget.configure(this, resources, MyCertificate.getBytes());
+return (rootView);</code></pre>
+
+<p class="remark">This example demonstrates the minimum steps needed to initialize the Math Widget. You can change its look and feel by calling its setup APIs and by overriding the listener callbacks that it manages.</p>
+		</article>
+          
+          </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <dimen name="actionbar_compat_height">48dp</dimen>
+    <dimen name="actionbar_compat_button_width">48dp</dimen>
+    <dimen name="actionbar_compat_button_home_width">56dp</dimen>
+    <dimen name="list_section_divider_min_height">32dip</dimen>
+    
+    <!-- Settings -->
+    <dimen name="settings_padding">0dip</dimen>
+
+    <!-- ActionItems -->
+    <dimen name="action_separator_height">32dip</dimen>
+    <dimen name="action_item_height">48dip</dimen>
+    <dimen name="action_item_width">48dip</dimen>
+    <dimen name="action_items_bar_height">48dip</dimen>
+    <dimen name="action_item_margin">8dip</dimen>
+    
+</resources>

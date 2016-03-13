@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="mltw">
+        <attr name="mltw_background" format="color|reference" />
+        <attr name="mltw_inkColor" format="color|reference" />
+        <attr name="mltw_inkThickness" format="dimension|reference" />
+        <attr name="mltw_scrollbar" format="reference" />
+        <attr name="mltw_scrollbarBackground" format="color|reference" />
+        <attr name="mltw_insertion" format="reference" />
+        <attr name="mltw_guideline" format="reference" />
+        <attr name="mltw_guidelineGap" format="dimension|reference" />
+        <attr name="mltw_guidelineFirst" format="dimension|reference" />
+    </declare-styleable>
+
+</resources>

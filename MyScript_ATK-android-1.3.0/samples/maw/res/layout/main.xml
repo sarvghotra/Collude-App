@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:widget="http://schemas.android.com/apk/res/com.myscript.atk.maw.sample"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <!-- simple toolbar -->
+
+    <include
+        android:id="@+id/myscript_math_toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/main_tool_bar" />
+
+    <!--
+         Math widget (Available attributes)
+
+        // Text
+        widget:fontName             Font.ttf filename in assets folder. 
+                                    Default is STIXGeneral.ttf and use default application font if set to empty or invalid value.
+        widget:textColor            Default is #FF4B5775
+        widget:transientColor       Default is #FFAAAAAA
+        
+        // Ink
+        widget:inkColor             Same as textColor if set and #FF4B5775 otherwise.
+        widget:inkThickness         Default is 10
+        
+        // Write area
+        widget:backgroundColor      Default is #FFFFFFFF
+        widget:backgroundDrawable   Reference to a resource pattern or png file. Default is millimeter_background.
+        widget:paddingRatioTop      x percent of the width of the screen (with 0 <= x <= 100). Default is 5
+        widget:paddingRatioBottom   x percent of the height of the screen (with 0 <= x <= 100). Default is 5
+        widget:paddingRatioLeft     x percent of the height of the screen (with 0 <= x <= 100). Default is 10
+        widget:paddingRatioRight    x percent of the height of the screen (with 0 <= x <= 100). Default is 10
+        
+        // Baseline
+        widget:baselineColor        Default is #FFAAAAAA
+        widget:baselineThickness    x > 0. Default is 1.
+        
+        // Palm rejection
+        widget:palmRejectionEnabled Enabled by default.
+        widget:palmRejectionHand    Right handed by default.
+        
+        // Recognition timeout
+        widget:recoTimeout          x >= 0 ms. Default is 0 (deactivated).
+        
+        // Solver
+        widget:decimalsCount        0 <= x <= 6. Default is 3.
+        widget:angleUnit            Possibles values are "degree" or "radian". Default is "degree".
+        widget:solverEnabled        "true" or "false" depending on whether the solver should be enabled or not. 
+    -->
+
+    <com.myscript.atk.maw.styleable.MathWidgetStyleable
+        android:id="@+id/myscript_maw"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/myscript_math_toolbar" />
+
+</RelativeLayout>

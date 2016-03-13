@@ -1,0 +1,72 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+In sdk-lib:
+* AndroidManifest.xml => sdklib\src\main\AndroidManifest.xml
+* libs\arm64-v8a\libMyScript2D.so => sdklib\src\main\jniLibs\arm64-v8a\libMyScript2D.so
+* libs\arm64-v8a\libMyScriptAnalyzer.so => sdklib\src\main\jniLibs\arm64-v8a\libMyScriptAnalyzer.so
+* libs\arm64-v8a\libMyScriptDocument.so => sdklib\src\main\jniLibs\arm64-v8a\libMyScriptDocument.so
+* libs\arm64-v8a\libMyScriptEngine.so => sdklib\src\main\jniLibs\arm64-v8a\libMyScriptEngine.so
+* libs\arm64-v8a\libMyScriptInk.so => sdklib\src\main\jniLibs\arm64-v8a\libMyScriptInk.so
+* libs\arm64-v8a\libMyScriptInkSearch.so => sdklib\src\main\jniLibs\arm64-v8a\libMyScriptInkSearch.so
+* libs\arm64-v8a\libMyScriptMath.so => sdklib\src\main\jniLibs\arm64-v8a\libMyScriptMath.so
+* libs\arm64-v8a\libMyScriptPrediction.so => sdklib\src\main\jniLibs\arm64-v8a\libMyScriptPrediction.so
+* libs\arm64-v8a\libMyScriptShape.so => sdklib\src\main\jniLibs\arm64-v8a\libMyScriptShape.so
+* libs\arm64-v8a\libMyScriptText.so => sdklib\src\main\jniLibs\arm64-v8a\libMyScriptText.so
+* libs\armeabi-v7a\libMyScript2D.so => sdklib\src\main\jniLibs\armeabi-v7a\libMyScript2D.so
+* libs\armeabi-v7a\libMyScriptAnalyzer.so => sdklib\src\main\jniLibs\armeabi-v7a\libMyScriptAnalyzer.so
+* libs\armeabi-v7a\libMyScriptDocument.so => sdklib\src\main\jniLibs\armeabi-v7a\libMyScriptDocument.so
+* libs\armeabi-v7a\libMyScriptEngine.so => sdklib\src\main\jniLibs\armeabi-v7a\libMyScriptEngine.so
+* libs\armeabi-v7a\libMyScriptInk.so => sdklib\src\main\jniLibs\armeabi-v7a\libMyScriptInk.so
+* libs\armeabi-v7a\libMyScriptInkSearch.so => sdklib\src\main\jniLibs\armeabi-v7a\libMyScriptInkSearch.so
+* libs\armeabi-v7a\libMyScriptMath.so => sdklib\src\main\jniLibs\armeabi-v7a\libMyScriptMath.so
+* libs\armeabi-v7a\libMyScriptPrediction.so => sdklib\src\main\jniLibs\armeabi-v7a\libMyScriptPrediction.so
+* libs\armeabi-v7a\libMyScriptShape.so => sdklib\src\main\jniLibs\armeabi-v7a\libMyScriptShape.so
+* libs\armeabi-v7a\libMyScriptText.so => sdklib\src\main\jniLibs\armeabi-v7a\libMyScriptText.so
+* libs\com.myscript.engine.jar => sdklib\libs\com.myscript.engine.jar
+* libs\com.myscript.prediction.jar => sdklib\libs\com.myscript.prediction.jar
+* libs\com.myscript.text.jar => sdklib\libs\com.myscript.text.jar
+* libs\x86\libMyScript2D.so => sdklib\src\main\jniLibs\x86\libMyScript2D.so
+* libs\x86\libMyScriptAnalyzer.so => sdklib\src\main\jniLibs\x86\libMyScriptAnalyzer.so
+* libs\x86\libMyScriptDocument.so => sdklib\src\main\jniLibs\x86\libMyScriptDocument.so
+* libs\x86\libMyScriptEngine.so => sdklib\src\main\jniLibs\x86\libMyScriptEngine.so
+* libs\x86\libMyScriptInk.so => sdklib\src\main\jniLibs\x86\libMyScriptInk.so
+* libs\x86\libMyScriptInkSearch.so => sdklib\src\main\jniLibs\x86\libMyScriptInkSearch.so
+* libs\x86\libMyScriptMath.so => sdklib\src\main\jniLibs\x86\libMyScriptMath.so
+* libs\x86\libMyScriptPrediction.so => sdklib\src\main\jniLibs\x86\libMyScriptPrediction.so
+* libs\x86\libMyScriptShape.so => sdklib\src\main\jniLibs\x86\libMyScriptShape.so
+* libs\x86\libMyScriptText.so => sdklib\src\main\jniLibs\x86\libMyScriptText.so
+* res\ => sdklib\src\main\res\
+* src\ => sdklib\src\main\java\
+In styluscore-lib:
+* AndroidManifest.xml => styluscorelib\src\main\AndroidManifest.xml
+* libs\arm64-v8a\libStylusCore.so => styluscorelib\src\main\jniLibs\arm64-v8a\libStylusCore.so
+* libs\armeabi-v7a\libStylusCore.so => styluscorelib\src\main\jniLibs\armeabi-v7a\libStylusCore.so
+* libs\x86\libStylusCore.so => styluscorelib\src\main\jniLibs\x86\libStylusCore.so
+* res\ => styluscorelib\src\main\res\
+* src\ => styluscorelib\src\main\java\
+In maw-lib:
+* AndroidManifest.xml => mawlib\src\main\AndroidManifest.xml
+* libs\AtkMaw.jar => mawlib\libs\AtkMaw.jar
+* res\ => mawlib\src\main\res\
+* src\ => mawlib\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

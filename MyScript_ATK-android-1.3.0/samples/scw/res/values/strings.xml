@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Single char widget sample</string>
+    
+    <!-- Test layout -->
+    <string name="field_text">Text</string>
+    <string name="field_email">Email</string>
+    <string name="field_phone">Phone</string>
+    
+    <!-- Button labels -->
+    <string name="btn_space">Space</string>
+    <string name="btn_delete">Backspace</string>
+    <string name="btn_return">Next</string>
+
+</resources>

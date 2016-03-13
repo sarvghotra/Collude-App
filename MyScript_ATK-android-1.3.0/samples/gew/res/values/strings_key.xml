@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Read/Write properties -->
+    <string name="pref_ink_color_key" translatable="false">color</string>
+    <string name="pref_ink_thickness_key" translatable="false">thickness</string>
+    <string name="pref_ink_dashed_key" translatable="false">ink_dashed</string>
+    <string name="pref_background_color_key" translatable="false">background_color</string>    
+    <string name="pref_background_view_key" translatable="false">background_view</string>    
+    <string name="pref_palm_key" translatable="false">palm</string>
+    <string name="pref_palm_lefthanded_key" translatable="false">palm_lefthanded</string>
+    
+    <!-- Read only properties -->
+    <string name="pref_can_undo_key" translatable="false">undo_can</string>
+    <string name="pref_can_redo_key" translatable="false">redo_can</string>
+    <string name="pref_empty_key" translatable="false">empty</string>
+    <string name="pref_busy_key" translatable="false">busy</string>
+    
+    <!-- Constraints detection/display -->
+    <string name="pref_constraint_detection_implicit_key" translatable="false">constraint_detection_implicit</string>
+    <string name="pref_constraint_detection_explicit_key" translatable="false">constraint_detection_explicit</string>
+    <string name="pref_constraint_display_implicit_key" translatable="false">constraint_display_implicit</string>
+    <string name="pref_constraint_display_explicit_key" translatable="false">constraint_display_explicit</string>
+    
+    <!-- Parameters -->
+    <string name="pref_display_parameters_key" translatable="false">display_parameters</string>
+    
+    <!-- Brushes -->
+    <string name="pref_brushes_parameters_key" translatable="false">brushes_parameters</string>
+    
+    <!-- Version -->
+    <string name="pref_version_key" translatable="false">version</string>
+
+</resources>

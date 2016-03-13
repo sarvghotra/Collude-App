@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Widget background color -->
+    <color name="widget_background">#08000000</color>
+    
+    <!-- Candidate label color -->
+    <color name="candidate_label">#FF33B5E5</color>
+    
+    <!-- Candidate completion color -->
+    <color name="candidate_completion">#FF000000</color>
+    
+</resources>

@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Interactive Text Component</string>
+    
+    <!-- Main menu actions -->
+    <string name="clean">Clean</string>
+    <string name="show_guidelines">Show guidelines</string>
+    <string name="load_itf">Load ITF files</string>
+    <string name="change_page_interpreter">Change page interpreter</string>
+    <string name="save_page_as_itf">Save current page as ITF</string>
+    <string name="show_text">Show text</string>
+    <string name="gestures">Gestures</string>
+    <string name="pen">Pen</string>
+    <string name="typeset_page">Typeset the page</string>
+    <string name="change_language">Change language</string>
+    <string name="version">Version</string>
+        
+    <!-- Pen -->
+    <string name="drawing_pen">Drawing pen</string>
+    <string name="recognition_pen">Recognition pen</string>
+    
+    <!-- ITF files -->
+    <string name="choose_itf">Choose ITF file</string>
+    
+    <!-- Gestures -->
+    <string name="gesture_settings_dial">Gesture settings</string>
+    <string name="enable_gesture">Enable gesture</string>
+    <string name="default_processing">Default processing</string>
+    <string name="erase_gesture">Erase</string>
+    <string name="insert_gesture">Insert</string>
+    <string name="join_gesture">Join</string>
+    <string name="overwrite_gesture">Overwrite</string>
+    <string name="return_gesture">Return</string>
+    <string name="selection_gesture">Selection</string>
+    <string name="singletap_gesture">Single Tap</string>
+    <string name="underline_gesture">Underline</string>
+    
+    <!-- Page interpreter -->
+    <string name="page_interpreter_1">Page interpreter 1</string>
+    <string name="page_interpreter_2">Page interpreter 2</string>
+    <string name="page_interpreter_3">Page interpreter 3</string>
+    <string name="page_interpreter_4">Page interpreter 4</string>
+        
+    <!-- Page change -->
+    <string name="previous_page">Previous page</string>
+    <string name="next_page">Next page</string>
+    
+    <!-- Contextual operations -->
+    <string name="change_candidate">Change candidate</string>
+    <string name="typeset">Typeset</string>
+</resources>

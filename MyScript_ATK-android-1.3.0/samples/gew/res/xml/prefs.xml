@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="settings"
+    android:layout="@layout/settings"
+    android:title="@string/settings_activity_name" >
+
+    <PreferenceCategory android:title="@string/pref_readwrite_category" >
+        <ListPreference
+            android:defaultValue="@string/defaultColor"
+            android:entries="@array/colorNames"
+            android:entryValues="@array/colorValues"
+            android:key="@string/pref_ink_color_key"
+            android:title="@string/pref_ink_color_title" />
+        <ListPreference
+            android:defaultValue="@string/defaultThickness"
+            android:entries="@array/thicknessNames"
+            android:entryValues="@array/thicknessValues"
+            android:key="@string/pref_ink_thickness_key"
+            android:title="@string/pref_ink_thickness_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_ink_dashed_key"
+            android:title="@string/pref_dashed_title" />
+    </PreferenceCategory>
+</PreferenceScreen>

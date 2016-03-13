@@ -1,0 +1,64 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="MltwHoloBagel" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/mltw_window_background</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.MltwBagel</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Solid.MltwBagel</item>
+        <item name="android:actionModeBackground">@color/mltw_material</item>
+        <item name="android:actionModeSplitBackground">@color/mltw_material</item>
+        <item name="android:actionOverflowButtonStyle">@style/ActionButton.Overflow.MltwBagel</item>
+        <!-- Light.DarkActionBar specific -->
+        <item name="android:actionBarWidgetTheme">@style/Widget.MltwHoloBagel</item>
+        <!-- Widget -->
+        <item name="mltw_widgetBackground">@color/mltw_window_background</item>
+        <item name="mltw_widgetInkColor">@drawable/mltw_ink_color</item>
+        <item name="mltw_widgetInkColorSelected">@color/mltw_ink_color_selected</item>
+        <item name="mltw_widgetInkThickness">2dp</item>
+        <item name="mltw_widgetScrollbar">@null</item>
+        <item name="mltw_widgetScrollbarBackground">@null</item>
+        <item name="mltw_candidatesBackground">@color/mltw_candidate_background</item>
+        <item name="mltw_candidatesColor">@color/mltw_candidate_text</item>
+        <item name="mltw_candidatesColorSelected">@color/mltw_candidate_text_main</item>
+        <item name="mltw_noteTextBackground">#eef0f0</item>
+        <item name="mltw_noteTextColor">#617379</item>
+    </style>
+
+    <style name="ActionBar.Solid.MltwBagel" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+        <item name="android:actionBarItemBackground">@color/mltw_material</item>
+        <item name="android:background">@color/mltw_material</item>
+        <item name="android:backgroundSplit">@color/mltw_material</item>
+        <item name="android:titleTextStyle">@style/ActionBar.Title.MltwBagel</item>
+        <item name="android:displayOptions">showHome|useLogo|showTitle</item>
+        <item name="android:indeterminateProgressStyle">@style/ActionBar.IndeterminateProgressBar.MltwBagel</item>
+    </style>
+
+    <style name="ActionBar.Solid.MltwBagel.Tutorial">
+        <item name="android:background">@color/mltw_material</item>
+        <item name="android:displayOptions">showTitle</item>
+    </style>
+
+    <style name="ActionButton.Overflow.MltwBagel" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/mltw_ic_action_overflow</item>
+    </style>
+
+    <style name="ActionBar.Title.MltwBagel" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title.Inverse">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ActionBar.IndeterminateProgressBar.MltwBagel" parent="@android:style/Widget.Holo.Light.ProgressBar.Large">
+        <item name="android:minWidth">24dp</item>
+        <item name="android:maxWidth">24dp</item>
+        <item name="android:minHeight">24dp</item>
+        <item name="android:maxHeight">24dp</item>
+    </style>
+
+    <style name="PopupMenu.MltwBagel" parent="@android:style/Widget.Holo.ListPopupWindow">
+        <!-- <item name="android:popupBackground">@drawable/popup_background</item> -->
+    </style>
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Widget.MltwHoloBagel" parent="@android:style/Theme.Holo">
+        <item name="android:popupMenuStyle">@style/PopupMenu.MltwBagel</item>
+    </style>
+
+</resources>

@@ -1,1 +1,4 @@
 include ':app'
+include ':sdklib'
+include ':styluscorelib'
+include ':mawlib'

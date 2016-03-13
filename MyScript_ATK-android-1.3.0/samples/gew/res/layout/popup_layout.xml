@@ -1,0 +1,26 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:widget="http://schemas.android.com/apk/res/com.myscript.atk.gew.sample"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp" >
+        <com.myscript.atk.maw.styleable.MathWidgetStyleable
+            android:id="@+id/vo_math_widget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            widget:maw_beautificationOption="fontify"
+             />
+        <TextView
+            android:id="@+id/writeComment"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:includeFontPadding="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/popupwindow_msg"
+            android:typeface="sans"
+            android:textSize="18sp"
+            android:textColor="#FFAAAAAA"/>
+</RelativeLayout>

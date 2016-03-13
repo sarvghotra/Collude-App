@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head><link rel="icon" href="../images/favicon.ico" />
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>MyScript SLTW (Android)</title>
+<link rel="stylesheet" href="../css/MySBuilder.css" type="text/css">
+
+<script src="../js/prism.js"></script>
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+
+<h1>Single Line Text Widget</h1>
+<p class="remark">To install and integrate the <strong>Single Line Text Widget</strong> on Android, you must be using  the latest version of Eclipse and have all Android tools and SDK (level 8 or up) installed and configured properly.</p>
+ <ul>
+   <h2>Integration</h2>
+<h3>Links between projects</h3>
+      
+<p><ins>main_application</ins><br />
+  Right-click > Properties > Android<br />
+  > Add references: sltw-lib-styleable</p>
+
+  <h3>Handwriting recognition resources</h3>
+  <p>Copy  assets directory from sltw-sample into the root level of  main_application directory.<br>
+    Resources  should include at least an AK type resource. More LK resources can be added as  well, to improve and/or specialize handwriting recognition.</p>
+  <p>For example, in US English, resources are:  
+  <ul>
+    <li>en_US-ak-cur.lite.res <em>(for cursive mode)</em></li>
+    <li>en_US-ak-iso.lite.res <em>(for box mode)</em></li>
+    <li>en_US-lk-text.lite.res</li>
+  </ul>
+  
+<h3>Libraries</h3>
+<p>The following SDK libraries are required and need to be added:</p>
+<ul>
+  <li>libMyScript2D.so</li>
+  <li>libMyScriptEngine.so</li>
+  <li>libMyScriptText.so</li>
+</ul>
+<h3>XML layout</h3>
+  <p>Add a layout resource in res/layout from your application containing the following definition, in order to provide the UI for the widget.</p>
+
+<pre class="language-java"><code>&lt;com.myscript.atk.sltw.SingleLineTextWidgetStyleable
+  android:id="@+id/sltw"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" /&gt;</code></pre>
+
+<p>The definition can also be used to change the default options in the widget. See the <strong>sltw-lib-styleable/res/values/sltw_attrs.xml</strong> to get the list of the widget's attributes.</p>
+
+<h3>Simple code integration</h3>
+<ul>
+  <li>Add <strong>SimpleResourceHelper.java</strong> from the sample program to your project.<br />
+    This class is used to copy the resources from the assets to the system when running the application.</li>
+  <li>Create an Activity class. This class should import the certificate <strong>com.myscript.certificate.MyCertificate </strong>and<strong> the SimpleResourceHelper</strong>.<br />
+    The activity can implement the different TextWidgetApi listeners.    (See the code sample provided for more details).</li>
+  <li>Add the following code to the <strong>onCreate</strong> method of the Activity class.<br /></ul>
+<pre class="language-java"><code>SingleLineTextWidgetApi mWidget = (SingleLineTextWidgetApi) findViewById(R.id.sltw); // sltw is defined in layout hierarchy
+
+// Build an array of handwriting resources
+final String[] resources = new String[] {
+ "en_US/en_US-ak-cur.lite.res",
+ "en_US/en_US-lk-text.lite.res",
+};
+ 
+// Copy handwriting resources from assets if missing and get their paths
+SimpleResourceHelper helper = new SimpleResourceHelper(this);
+String[] paths = helper.getResourcePaths(resources);
+
+// Define a custom lexicon
+String[] lexicon = new String[] {
+  // add your user dictionary here
+};
+
+// Initialize the widget
+mWidget.configure("en_US", paths, lexicon, MyCertificate.getBytes());
+</code></pre>
+
+<p class="remark">This example demonstrates the minimum steps needed to initialize the Single Line Text Widget. You can change its look and feel by calling its setup APIs and by overriding the listener callbacks that it manages.</p>
+
+   
+
+</ul>
+  </body>
+</html>

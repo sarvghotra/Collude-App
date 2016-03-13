@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <com.myscript.atk.itc.sample.view.PageView
+        android:id="@+id/itc_pageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <com.myscript.atk.itc.sample.inkcapture.InkCaptureView
+            android:id="@+id/itc_inkcaptureview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.myscript.atk.itc.sample.view.GuidelinesView
+            android:id="@+id/itc_guidelinesview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.myscript.atk.itc.sample.view.SmartStrokeLayoutView
+            android:id="@+id/itc_strokelayoutview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.myscript.atk.itc.sample.view.TypesetSmartWordLayoutView
+            android:id="@+id/itc_typesetwordlayoutview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/itc_previouspage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:background="@color/ITC_TRANSPARENT"
+            android:onClick="previousPage"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"            
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
+            android:text="@string/previous_page"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/itc_nextpage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:background="@color/ITC_TRANSPARENT"
+            android:onClick="nextPage"
+            android:paddingStart="0dp"
+            android:paddingEnd="10dp"            
+            android:paddingLeft="0dp"
+            android:paddingRight="10dp"
+            android:text="@string/next_page"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/itc_pagenumberview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/ITC_TRANSPARENT"
+            android:paddingBottom="3dp"
+            android:textSize="20sp" />
+    </com.myscript.atk.itc.sample.view.PageView>
+
+    <TextView
+        android:id="@+id/itc_recognitiontextview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ITC_RECOGNITION_TEXT_COLOR"
+        android:textSize="30sp" />
+
+</LinearLayout>
