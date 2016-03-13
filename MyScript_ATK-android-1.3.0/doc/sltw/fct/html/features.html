@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+ <head><link rel="icon" href="../images/favicon.ico" />
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+  <title>MyScript SLTW (Android)</title>
+  <link rel="stylesheet" href="../css/MySBuilder.css" type="text/css">
+ </head>
+ <body bgcolor="#FFFFFF" text="#000000">
+
+<h1>Single Line Text Widget</h1>
+
+<h2>Features</h2>
+    <ul>
+<h3>Modes</h3>
+<p>The <strong>Single Line Text Widget</strong> can operate in  3 modes: insertion, correction and box.</p>
+<ul><h4>Insertion mode</h4>
+<p>Insertion mode is designed to enable the user to write text in a continuous flow. The writing area scrolls automatically after a short delay, once the user has finished writing. Scrolling of the writing area is managed by the widget.</p>
+<h4>Correction mode</h4>
+<p>Correction mode is designed to enable the user to navigate and edit the text already entered. A cursor bar and a cursor handle are shown in the writing area. The handle can be dragged by the user directly from the writing area. The widget provides notifications when the handle is dragged, so that the input method synchronizes the movement of the cursors in the writing area and in the input field.</p>
+<h4>Box mode</h4>
+<p>Box mode is designed to enable the user to write isolated characters in boxes, thanks to an ak-iso resource. 
+  Characters are recognized letter by letter, thus reducing recognition mistakes. It is useful  for filling in form fields, especially with words that are not dictionary- or lexicon-related. If needed, input characters can also be hidden behind asterisks (e.g. for passwords).</p>
+  <p class="remark">The box mode is not supported by the following languages: Arabic, Farsi, Hebrew, Urdu and Thai.</p>
+  </ul>
+
+<h3>Gesture detection</h3>
+<p>Handwriting gestures are detected by the widget in correction mode. A set of listener callbacks is provided so that the input method can take action when some of the gestures are detected.</p>
+<p>The following gestures are supported:<br>
+<ul>
+ <li>Single tap</li>
+ <li>Insert (top to bottom straight line)</li>
+ <li>Join (line from one word to the next one)</li>
+ <li>Return (continuous line from top to bottom then from right to left)</li>
+ <li>Erase (scratch-out or strike-through)</li>
+<li>Overwrite</li>
+</ul>
+<h3>Text interface</h3>
+<p>The widget simplifies text manipulation by providing a simple character-based method 
+ to edit the text. Whether text is represented as ink or as characters in the writing area, the widget handles all of this transparently.</p>
+<p>A single method is provided to modify the text of the writing area:</p>
+
+  <ul><p> public void replaceCharacters(int start, int end, String text).<br>
+      <strong>start</strong> - Character index of the first character to replace.<br>
+      <strong>end</strong> - Character index past the last character to replace.<br>
+      <strong>text</strong> - Replacement text string (may be null).</p></ul>
+<p>This method is a versatile tool that handles text insertion, deletion and replacement.<br>
+ Handwriting recognition candidate change is implemented as a simple text replacement.</p>
+<h3>Cursor interface</h3>
+<p>In correction mode, the widget displays a cursor bar and a cursor handle in the writing area. The position of the handle is managed by the widget, while the position of the cursor bar is managed by the input method.</p>
+<p>The input method can set the position of the cursor bar which is moved accordingly in the writing area.<br>
+ When the user drags the cursor handle in the writing area, the widget notifies the input method of drag events. That way, it can move the cursor bar both in the input field and in the writing area.</p>
+<p>Positioning the cursor inside the text automatically selects the word or character at the position of the cursor, depending on the current selection mode. This triggers a selection change event that notifies the input method of the available handwriting candidates.</p>
+<h3>Handwriting recognition setup</h3>
+<p>The widget simplifies the setup of the handwriting recognition engine, and reconfiguration of the engine in case of language change for example.</p>
+<ul>
+  <p> public void configure(String locale, String[] resources, String[] lexicon, byte[] certificate)<br>
+    <strong>locale</strong> - String representation of the handwriting recognition locale.<br>
+    <strong>resources</strong> - Array of paths to handwriting resource files.<br>
+    <strong>lexicon</strong> - Array of user lexicon entries. May be null.<br>
+    <strong>certificate</strong> - Byte array containing the handwriting recognition certificate.
+</ul>
+<p>This function is non-blocking and performs configuration in the background to avoid blocking the UI thread. Listener callbacks are provided to monitor the beginning and end of the configuration process and update the UI of the input method accordingly.</p>
+<h3>UI customization</h3>
+<p>A number of options are provided to customize the UI of the widget's writing area. The widget can be customized via the widget API or directly from an XML file, provided your layout uses the TextWidgetV3 widget view and links to the text-widget-v3 Android library.</p>
+<p>The following items can be configured:<br>
+<ul>
+  <li>Font for typeset text</li>
+ <li>Text size &amp; color</li>
+ <li>Ink width &amp; color</li>
+ <li>Background image of the scrolling area</li>
+ <li>Baseline position, thickness &amp; color</li>
+ <li>Box size &amp; color</li></ul>
+ <h3>Languages</h3>
+ <p>The Single Line Text Widget supports <a href="https://dev.myscript.com/language-list/?tab=atk-sl" target="_blank">64 languages</a>.</p>
+ </ul>
+ </div>
+ </body>
+</html>

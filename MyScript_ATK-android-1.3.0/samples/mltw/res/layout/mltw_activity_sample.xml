@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/mltw_note_text" />
+
+    <com.myscript.atk.mltw.MultiLineTextWidget
+        xmlns:myscript="http://schemas.android.com/apk/res-auto"
+        android:id="@id/mltw_noteWidget"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/mltw_menuReflow"
+        android:layout_below="@id/header"
+        myscript:mltw_background="?attr/mltw_widgetBackground"
+        myscript:mltw_inkColor="?attr/mltw_widgetInkColor"
+        myscript:mltw_inkThickness="?attr/mltw_widgetInkThickness"
+        myscript:mltw_scrollbar="?attr/mltw_widgetScrollbar"
+        myscript:mltw_scrollbarBackground="?attr/mltw_widgetScrollbarBackground" />
+
+    <Button
+        android:id="@id/mltw_menuReflow"
+        style="?android:attr/actionButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/mltw_material"
+        android:text="@string/mltw_sample_reflow"
+        android:textAppearance="?android:actionMenuTextAppearance"
+        android:textColor="?android:attr/textColorPrimaryInverse" />
+
+</RelativeLayout>

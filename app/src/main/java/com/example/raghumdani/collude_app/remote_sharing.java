@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class remote_sharing extends Activity {
 
@@ -13,7 +16,6 @@ public class remote_sharing extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_remote_sharing);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

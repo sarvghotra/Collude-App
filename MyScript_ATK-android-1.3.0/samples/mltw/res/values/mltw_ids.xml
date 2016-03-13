@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Menu -->
+    <item name="mltw_menuClear" type="id"/>
+    <item name="mltw_menuReflow" type="id"/>
+    <item name="mltw_menuShare" type="id"/>
+    <item name="mltw_menuNext" type="id"/>
+    <item name="mltw_menuPrev" type="id"/>
+    <item name="mltw_menuPageMode" type="id"/>
+    <!-- Note -->
+    <item name="mltw_content" type="id"/>
+    <item name="mltw_noteWidgetWrapper" type="id"/>
+    <item name="mltw_noteThumbnail" type="id"/>
+    <item name="mltw_noteWidget" type="id"/>
+    <item name="mltw_noteHint" type="id"/>
+    <item name="mltw_noteTextWrapper" type="id"/>
+    <item name="mltw_noteText" type="id"/>
+    <item name="mltw_noteTextButton" type="id"/>
+    <item name="mltw_candidatesBar" type="id"/>
+    <item name="mltw_moreCandidates" type="id"/>
+
+</resources>

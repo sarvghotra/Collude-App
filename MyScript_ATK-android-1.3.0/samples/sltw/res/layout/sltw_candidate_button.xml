@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="@dimen/sltw_sample_minButtonWidth"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/sltw_btn_keyboard_key_xml"
+    android:textColor="@drawable/sltw_candidate_text_color_xml"
+    android:textAllCaps="false"
+    />

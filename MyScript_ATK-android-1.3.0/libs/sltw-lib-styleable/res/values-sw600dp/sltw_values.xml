@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- ### Configuration for 7" devices (portrait) ### -->
+    
+    
+    <!-- auto-scroll left ratio (% of screen width) -->
+    <integer name="sltw_autoScrollRatioLeft">20</integer>
+    
+    <!-- auto-scroll right ratio (% of screen width) -->
+    <integer name="sltw_autoScrollRatioRight">85</integer>
+    
+    <!-- auto-scroll margin (% of screen width) -->
+    <integer name="sltw_autoScrollMargin">25</integer>
+    
+    <!-- insert window margin (% of screen width) -->
+    <integer name="sltw_insertWindowMargin">10</integer>
+    
+    <!-- user overscroll threshold (% of screen width) -->
+    <integer name="sltw_userOverscrollThreshold">50</integer>
+    
+    <!-- handle overscroll threshold (% of screen width) -->
+    <integer name="sltw_handleOverscrollThreshold">25</integer>
+</resources>

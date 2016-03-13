@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/clean"
+        android:showAsAction="never"
+        android:title="@string/clean"/>
+    <item
+        android:id="@+id/show_guidelines"
+        android:showAsAction="never"
+        android:title="@string/show_guidelines"
+        android:checkable="true" />
+    <item
+        android:id="@+id/load_itf"
+        android:showAsAction="never"
+        android:title="@string/load_itf"/>
+    <item
+        android:id="@+id/change_page_interpreter"
+        android:showAsAction="never"
+        android:title="@string/change_page_interpreter"/>
+    <item
+        android:id="@+id/save_page_as_itf"
+        android:showAsAction="never"
+        android:title="@string/save_page_as_itf"/>
+    <item
+        android:id="@+id/show_text"
+        android:showAsAction="never"
+        android:title="@string/show_text"
+        android:checkable="true"/>
+    <item
+        android:id="@+id/gestures"
+        android:showAsAction="never"
+        android:title="@string/gestures"/>
+    <item
+        android:id="@+id/pen"
+        android:showAsAction="never"
+        android:title="@string/pen"/>
+    <item
+        android:id="@+id/typeset_page"
+        android:showAsAction="never"
+        android:title="@string/typeset_page"/>
+    <item
+        android:id="@+id/change_language"
+        android:actionProviderClass="com.myscript.atk.itc.sample.controller.ChangeLanguageActionProvider"
+        android:showAsAction="never"
+        android:title="@string/change_language"/>
+    <item
+        android:id="@+id/version"
+        android:showAsAction="never"
+        android:title="@string/version"/>
+</menu>

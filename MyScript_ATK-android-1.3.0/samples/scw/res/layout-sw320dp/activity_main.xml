@@ -1,0 +1,90 @@
+<!-- Layout designed for Samsung Galaxy Gear smartwatch -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.myscript.atk.scw.sample.FieldView
+            android:id="@+id/field1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="@string/field_text" />
+
+        <com.myscript.atk.scw.sample.FieldView
+            android:id="@+id/field2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="@string/field_email" />
+
+        <com.myscript.atk.scw.sample.FieldView
+            android:id="@+id/field3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="@string/field_phone" />
+        
+	    <LinearLayout 
+	        android:id="@+id/candidate_layout"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" />
+    
+    </LinearLayout>
+
+    <LinearLayout 
+        android:id="@+id/btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true" >
+	    
+        <Button 
+            android:id="@+id/btn_lang"
+            android:minWidth="@dimen/btn_width_min"
+	        android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_weight="0" />
+        
+        <Button 
+            android:id="@+id/btn_space"
+            android:minWidth="@dimen/btn_width_min"
+	        android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_weight="1"
+    	    android:text="@string/btn_space" />
+                
+        <Button 
+            android:id="@+id/btn_delete"
+            android:minWidth="@dimen/btn_width_min"
+	        android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_weight="0"
+    	    android:text="@string/btn_delete" />
+        
+        <Button 
+            android:id="@+id/btn_return"
+            android:minWidth="@dimen/btn_width_min"
+	        android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_weight="0"
+    	    android:text="@string/btn_return" />
+        
+    </LinearLayout>
+
+    <com.myscript.atk.scw.SingleCharWidget
+        android:id="@+id/widget"
+        android:background="@color/widget_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    
+</RelativeLayout>

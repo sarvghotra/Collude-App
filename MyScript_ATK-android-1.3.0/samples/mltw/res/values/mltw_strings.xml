@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="mltw_sample_app_name">MultiLineTextWidget Sample</string>
+    <string name="mltw_sample_activity_label">MLTW Sample</string>
+    <string name="mltw_sample_reflow">Reflow</string>
+    <string name="mltw_sample_hwrconfig_success">Configuration of handwriting engine succeeded</string>
+    <string name="mltw_sample_hwrconfig_failure">Configuration of handwriting engine failed</string>
+
+</resources>

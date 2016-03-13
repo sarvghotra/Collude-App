@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <!-- Widget height -->
+    <dimen name="widget_height">300dp</dimen>
+    <dimen name="widget_height_min">140dp</dimen>
+    
+    <!-- Button minimum width -->
+    <dimen name="btn_width_min">60dp</dimen>
+    
+    <!-- Candidate button minimum width -->
+    <dimen name="candidate_width_min">50dp</dimen>
+
+</resources>

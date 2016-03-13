@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- ### Configuration for phone devices (portrait) ### -->
+    
+    
+    <!-- auto-scroll left ratio (% of screen width) -->
+    <integer name="sltw_autoScrollRatioLeft">20</integer>
+    
+    <!-- auto-scroll right ratio (% of screen width) -->
+    <integer name="sltw_autoScrollRatioRight">90</integer>
+    
+    <!-- auto-scroll left delay (ms) -->
+    <integer name="sltw_autoScrollDelayLeft">3200</integer>
+    
+    <!-- auto-scroll right delay (ms) -->
+    <integer name="sltw_autoScrollDelayRight">600</integer>
+    
+    <!-- auto-typeset left delay (ms) -->
+    <integer name="sltw_autoTypesetDelayLeft">1000</integer>
+    
+    <!-- auto-typeset right delay (ms) -->
+    <integer name="sltw_autoTypesetDelayRight">3600</integer>
+    
+    <!-- auto-scroll margin (% of screen width) -->
+    <integer name="sltw_autoScrollMargin">20</integer>
+    
+    <!-- insert window margin (% of screen width) -->
+    <integer name="sltw_insertWindowMargin">10</integer>
+    
+    <!-- user overscroll threshold (% of screen width) -->
+    <integer name="sltw_userOverscrollThreshold">50</integer>
+    
+    <!-- handle overscroll threshold (% of screen width) -->
+    <integer name="sltw_handleOverscrollThreshold">50</integer>
+</resources>

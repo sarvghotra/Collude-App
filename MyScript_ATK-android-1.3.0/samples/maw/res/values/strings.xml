@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Math Widget sample</string>
+    <string name="activity_name">Math Widget sample</string>
+    
+    <!-- LANGUAGE PACK STRINGS -->
+    <string name="language_pack_update_msg">Please wait for the first initialization</string>
+    <string name="langpack_loading_error_title">Initialization error</string>
+    <string name="langpack_loading_error_msg">Initialization</string>
+    <string name="toolbar_clear_label">Clear</string>
+    
+</resources>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+<link rel="icon" href="../images/favicon.ico" />
+
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+<title>MyScript ITC (Android)</title>
+<link rel="stylesheet" href="../css/MySBuilder.css" type="text/css">
+
+<script src="../js/prism.js"></script>
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+<h1>Interactive Text Component</h1>
+<p class="remark">To install and integrate the <strong>Interactive Text Component</strong> on Android, you must be using the latest version of Eclipse and have all Android tools and SDK (level 8 or up) installed and configured properly.</p>
+<ul>
+      <h2>Integration</h2>
+      <h3>UI Framework dependency</h3>
+      <p>The Interactive Text Component is a UI-free component but to facilitate the integration of the typeset feature, we implemented a default CharBoxFactory. To do so, we need to use some of the classes provided by the Android package android.graphics:</p>
+      <ul>
+        <li> <strong>android.graphics.Rect:</strong> to compute the size of character boxes in a SmartWord.</li>
+        <li><strong> android.graphics.Typeface:</strong> to set the Paint object with the appropriate typeset text.</li>
+        <li><strong> android.graphics.Paint:</strong> to be configured with a Typeface to compute the size of character boxes in a SmartWord.</li>
+      </ul> 
+      <h3>Links between projects </h3>
+      <p><ins>main_application</ins><br />
+        Right-click > Properties > Android<br />
+        > Add references: itc-lib</p>
+      <h3>Handwriting recognition resources</h3>
+      <p>Copy assets directory from itc-sample into the root level of main_application directory. Resources should include at least an AK type resource. More LK resources can be added as well, to improve and/or specialize the handwriting recognition.</p>
+      <p>For example, in US English, resources should be at least:<br>
+      <ul>
+        <li>en_US-ak-cur.lite.res</li>
+        <li>en_US-lk-text.lite.res</li>
+      </ul>
+      <h3>Libraries</h3>
+      <p>The following SDK libraries are required and need to be added:</p>
+      <ul><li>libMyScript2D.so</li>
+      <li>libMyScriptEngine.so</li>
+      <li>libMyScriptText.so</li></ul>
+      <h3>Simple code integration</h3>
+      <ul>
+        <li> Add SimpleResourceHelper.java from the sample program to your project. This class is used to copy the resources from the assets to the system when running the application. You can change at any time the path where resources are copied on the SD card by editing this class.
+        </li>
+        <li> Create an Activity class. This class should import the certificate com.myscript.certificate.MyCertificate and the SimpleResourceHelper. The activity can implement the different Interactive Text Component listeners. (See the code sample provided for more details).</li>
+        <li> Add the following code to the onCreate method of the Activity class.</li>
+      </ul> 
+      <pre class="language-java"><code>// The following lines allow you to have a PageInterpreter ready for recognition request through a SmartPage
+
+// Instantiate a PageInterpreter
+PageInterpreter pageInterpreter = new PageInterpreter();
+
+// Set the PageInterpreter recognition listener to be notified for recognition configuration begin/end
+mPageInterpreter.setPageInterpreterListener(this);
+
+// Configure the Recognition
+String path = Environment.getExternalStorageDirectory().getPath() + "/" + SimpleResourceHelper.ASSETS_LANGUAGES_RESOURCE_DIR;
+String ak_path = "/en_US/en_US-ak-cur.lite.res";
+String lk_path = "/en_US/en_US-lk-text.lite.res";
+final List<String> resources = new ArrayList<String>(2);
+resources.add(path + ak_path);
+resources.add(path + lk_path);
+mPageInterpreter.configure("en_US",
+                           resources,
+                           new ArrayList<String>(),
+                           MyCertificate.getBytes(),
+                           context.getResources().getDisplayMetrics().densityDpi);
+
+// The following lines allow you to have a page ready for adding/removing strokes and words.
+
+// Instantiate a StrokeFactory and WordFactory
+StrokeFactory strokeFactory = new StrokeFactory();
+WordFactory wordFactory = new WordFactory(strokeFactory);<br>
+// Instantiate a SmartPage
+SmartPage page = new SmartPage(wordFactory);<br>
+// Set this as listener to be notified for strokes/words added/removed and recognition<br>
+page.setSmartPageRecognitionListener(this);
+page.setSmartPageChangeListener(this);
+page.setSmartPageGestureListener(this);<br>
+// Set the PageInterpreter current SmartPage
+mPageInterpreter.setPage(page);<br>
+// The following lines allow you to create a SmartStroke ready to be added to a SmartPage
+
+// Create a SmartStroke from a list of points (cf. sample for how to capture those points on a touch screen)
+SmartStroke stroke = mStrokeFactory.createStroke(v.getPointsX(),
+                                                 v.getPointsY(),
+                                                 mStrokeBeginTime,
+                                                 System.currentTimeMillis(),
+                                                 SmartStroke.StrokeType.RecognitionStroke, null);
+
+// Notify the end of the writing session<br>mPageInterpreter.getPage().penUp();<br>  <br>// Add the SmartStroke to the SmartPage<br>mPageInterpreter.getPage().addStroke(stroke);
+</code></pre>
+
+      <p class="remark">This example demonstrates the minimum steps needed to initialize the Interactive Text Component. You can change its look and feel by calling its setup APIs and by overriding the listener callbacks that it manages.</p>
+  </ul>
+</ul>
+ </ul>
+  </body>
+</html>

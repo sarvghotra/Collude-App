@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GeometryWidget">
+                
+        <!-- Ink -->
+        <attr name="gew_inkColor" format="reference|color" />
+        <attr name="gew_inkThickness" format="reference|integer" />
+        <attr name="gew_inkDashed" format="reference|boolean" />
+        
+        <!-- Write area -->
+        <attr name="gew_backgroundColor" format="reference|color" />
+        <attr name="gew_backgroundDrawable" format="reference" />
+        
+        <!-- Palm rejection -->
+        <attr name="gew_palmRejectionEnabled" format="boolean" />
+        <attr name="gew_palmRejectionHand">
+          <flag name="left" value="0x01" />
+          <flag name="right" value="0x02" />
+       </attr>
+    </declare-styleable>    
+</resources>

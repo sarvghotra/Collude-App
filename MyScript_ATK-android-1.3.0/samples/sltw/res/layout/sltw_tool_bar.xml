@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <ToggleButton
+        android:id="@+id/sltw_languageButton"
+        android:minWidth="@dimen/sltw_sample_minButtonWidth"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:background="@drawable/sltw_btn_keyboard_key_xml"
+        android:textColor="@drawable/sltw_language_text_color_xml"
+        android:textOn="@string/sltw_sample_languageButtonTextOn"
+        android:textOff="@string/sltw_sample_languageButtonTextOff"
+        android:saveEnabled="false" />
+
+    <ImageButton
+        android:id="@+id/sltw_spaceButton"
+        android:minWidth="@dimen/sltw_sample_minButtonWidth"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@drawable/sltw_btn_keyboard_key_xml"
+        android:src="@drawable/sltw_keyboard_space_xml"
+        android:contentDescription="@null"
+        />
+
+    <ImageButton
+        android:id="@+id/sltw_deleteButton"
+        android:minWidth="@dimen/sltw_sample_minButtonWidth"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:background="@drawable/sltw_btn_keyboard_key_xml"
+        android:src="@drawable/sltw_keyboard_delete_xml"
+        android:contentDescription="@null"
+        />
+
+</LinearLayout>

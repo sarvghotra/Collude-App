@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="mltw_material">#617379</color>
+    <color name="mltw_material_selection">#50617379</color>
+    <color name="mltw_ink_color">#617379</color>
+    <color name="mltw_ink_color_selected">#00b0ff</color>
+    <color name="mltw_window_background">#EFF1F1</color>
+    <color name="mltw_widget_background">#ffffff</color>
+    <color name="mltw_candidate_background">#E1E4E5</color>
+    <color name="mltw_candidate_text">#617379</color>
+    <color name="mltw_candidate_text_main">#00b0ff</color>
+    <color name="mltw_candidate_background_pressed">#ffffff</color>
+
+</resources>

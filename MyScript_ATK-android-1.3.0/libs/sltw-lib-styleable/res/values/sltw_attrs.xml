@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SLTW">
+        
+        <attr name="sltw_background" format="integer" />
+        <attr name="sltw_scrollbar" format="integer" />
+        <attr name="sltw_scrollbarMask" format="integer" />
+        <attr name="sltw_scrollbarBackground" format="integer" />
+        <attr name="sltw_scrollArrowLeft" format="integer" />
+        <attr name="sltw_scrollArrowRight" format="integer" />
+        <attr name="sltw_cursor" format="integer" />
+        <attr name="sltw_cursorHandle" format="integer" />
+        <attr name="sltw_insertHandle" format="integer" />
+        <attr name="sltw_guidedBox" format="integer" />
+        
+        <attr name="sltw_fontFamily" format="string" />
+        <attr name="sltw_textColor" format="color" />
+        <attr name="sltw_textSize" format="dimension" />
+        
+        <attr name="sltw_inkColor" format="color" />
+        <attr name="sltw_inkWidth" format="dimension" />
+        <attr name="sltw_inkCap" format="integer" />
+
+        <attr name="sltw_baselinePosition" format="dimension" />
+        <attr name="sltw_baselineThickness" format="dimension" />
+        <attr name="sltw_baselineColor" format="color" />
+        
+    </declare-styleable>    
+</resources>

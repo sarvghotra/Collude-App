@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- Appearance -->
+    <dimen name="itc_inkWidth">3dp</dimen>
+    <dimen name="itc_inkWidthMin">1px</dimen>
+    <dimen name="itc_inkWidthMax">20px</dimen>
+    <dimen name="itc_textSize">80dp</dimen>
+    <dimen name="itc_textSizeMin">40px</dimen>
+    <dimen name="itc_textSizeMax">200px</dimen>
+    <dimen name="itc_textOffset">50dp</dimen>
+    <dimen name="itc_writeAreaWidth">10000dp</dimen>
+    <dimen name="itc_writeAreaHeight">160dp</dimen>
+        
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- "String" because Android is buggy with integer-array... -->
+    <string name="defaultColor" translatable="false">#FF4B5775</string>
+    <string name="defaultBackgroundColor" translatable="false">#FFFFFFFF</string>
+    <string name="defaultBackgroundView" translatable="false">0</string>
+    <string name="defaultThickness" translatable="false">2</string>
+    <string name="defaultInkDashed" translatable="false">0</string>
+    <string name="defaultApproximation" translatable="false">0</string>
+    <string name="pref_font_default" translatable="false">STIXGeneral.ttf</string>
+    <string name="pref_italic_font_default" translatable="false"></string>
+    <string name="pref_line_default" translatable="false">1</string>
+
+</resources>
